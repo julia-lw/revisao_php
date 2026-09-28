@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* 1. CSS Flexbox Layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e293b;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card-form input, .modal-content input, button {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.actions-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 2. CSS Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.photo-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.photo-info {
+    padding: 0.75rem;
+}
+
+/* 3. CSS Positioning (fixed, absolute, z-index) */
+.modal-overlay {
+    position: fixed;     /* Fixa o overlay na tela inteira */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;       /* Camada superior */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;  /* Âncora para o botão fechar */
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.close-btn {
+    position: absolute;  /* Posicionado em relação ao modal-content */
+    top: 10px;
+    right: 12px;
+    background: transparent;
+    color: #64748b;
+    font-size: 1.2rem;
+}

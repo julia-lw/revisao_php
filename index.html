@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Estudo: Login, Upload & SQL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h2>Mini Galeria</h2>
+        <div id="user-status">Status: Visitante</div>
+    </header>
+
+    <main class="container">
+        <!-- Formulários em Flexbox -->
+        <section id="auth-section" class="flex-container">
+            <form id="form-cadastro" class="card-form">
+                <h3>Cadastrar</h3>
+                <input type="text" name="nome" placeholder="Nome completo" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="password" name="senha" placeholder="Senha" required>
+                <button type="submit">Criar Conta</button>
+            </form>
+
+            <form id="form-login" class="card-form">
+                <h3>Login</h3>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="password" name="senha" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </section>
+
+        <!-- Área Logada -->
+        <section id="app-section" class="hidden">
+            <div class="actions-bar">
+                <button id="btn-open-modal"> Nova Foto</button>
+                <button id="btn-stats"> Ver Total por Usuário (COUNT)</button>
+            </div>
+
+            <div id="stats-box" class="stats-card hidden"></div>
+
+            <h3>Galeria de Fotos (INNER JOIN)</h3>
+            <!-- Galeria em CSS Grid -->
+            <div id="gallery-grid" class="grid-container"></div>
+        </section>
+    </main>
+
+    <!-- Modal com CSS Positioning (fixed, absolute, z-index) -->
+    <div id="upload-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="btn-close-modal" class="close-btn">&times;</button>
+            <h3>Upload de Imagem</h3>
+            <form id="form-upload">
+                <input type="text" name="titulo" placeholder="Título da foto" required>
+                <input type="file" name="foto" accept="image/*" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
